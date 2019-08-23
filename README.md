@@ -1,3 +1,3 @@
 # Practice Algorithm Questions
 
-Let's get those!
+Algorithm for Happiness
