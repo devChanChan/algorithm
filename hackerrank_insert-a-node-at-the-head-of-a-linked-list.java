@@ -45,12 +45,10 @@ public class Solution {
     // Complete the insertNodeAtHead function below.
 
     /*
-     * For your reference:
+     * Author: SeungChan Kim
      *
-     * SinglyLinkedListNode {
-     *     int data;
-     *     SinglyLinkedListNode next;
-     * }
+     * Date: 2019-09-26
+     * https://www.hackerrank.com/challenges/insert-a-node-at-the-head-of-a-linked-list/problem
      *
      */
     static SinglyLinkedListNode insertNodeAtHead(SinglyLinkedListNode llist, int data) {
