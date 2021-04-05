@@ -3,7 +3,7 @@ package ArraysStrings.one;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ArraysStringsIsUnique_Map { 
+public class IsUnique_Map { 
     public static void main(String args[]) {
         String test = "helowrd";
         if(isAllUnique(test))

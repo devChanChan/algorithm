@@ -1,6 +1,6 @@
 package ArraysStrings.one;
 
-public class ArraysStringsIsUnique_Solution { 
+public class IsUnique_Solution { 
     public static void main(String args[]) {
         
         String input = "helWord";

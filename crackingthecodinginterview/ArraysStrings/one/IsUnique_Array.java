@@ -1,6 +1,6 @@
 package ArraysStrings.one;
 
-public class ArraysStringsIsUnique_Array {
+public class IsUnique_Array {
     public static void main(String args[]) {
         String test = "hellowrd";
         if (isAllUnique(test))
