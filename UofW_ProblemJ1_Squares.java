@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.lang.Math;
 
-public class Main
+public class UofW_ProblemJ1_Squares
 {
 	public static void main(String[] args) {
 	    
@@ -15,11 +15,12 @@ public class Main
 	    if(input <= 0) {
 	        System.out.println("Please enter postive integer.");
 	    } else {
-    	    	while(ans < (int)Math.sqrt(input)) {
-    	    	    ans++;
-    	    	}
+			while(ans < (int)Math.sqrt(input)) {
+				ans++;
+			}
 	    }
 	    
+		sc.close();
 		System.out.println("The largest square has side length " + ans);
 	}
 }

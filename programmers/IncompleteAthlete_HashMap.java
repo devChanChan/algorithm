@@ -1,6 +1,8 @@
+package programmers;
+
 import java.util.*;
 
-class Solution {
+class IncompleteAthlete_HashMap {
 
   public static void main(String[] args) {
     System.out.println(solution(new String[] {"leo", "kiki", "eden"}, new String[] {"eden", "kiki"}));
