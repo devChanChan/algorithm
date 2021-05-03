@@ -1,3 +1,4 @@
+import java.math.BigInteger;
 
 /**
  * Definition for singly-linked list.
@@ -15,56 +16,63 @@ public class AddTwoNumbers {
 
         ListNode n1 = new ListNode(2, new ListNode(4, new ListNode(3)));
         ListNode n2 = new ListNode(5, new ListNode(6, new ListNode(4)));
+        n1.printAll();
+        n2.printAll();
         
         ListNode result = addTwoNumbers(n1, n2);
-        while(result != null) {
-            System.out.println(result.val);
-            result = result.next;
-        }
+        result.printAll();
     }
 
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        String val1 = "";
-        String val2 = "";
+        String str1 = String.valueOf(l1.val);
+        String str2 = String.valueOf(l2.val);
         
-        while (l1 != null) {
-            System.out.println(l1.val);
-            val1 = String.valueOf(l1.val) + val1;
+        while (l1.next != null) {
+            str1 = String.valueOf(l1.next.val) + str1;
             l1 = l1.next;
         }
         
-        while (l2 != null) {
-            System.out.println(l2.val);
-            val2 = String.valueOf(l2.val) + val2;
+        while (l2.next != null) {
+            str2 = String.valueOf(l2.next.val) + str2;
             l2 = l2.next;
         }
 
-        int sum = 0;
-        sum = Integer.valueOf(val1) + Integer.valueOf(val2);
-        
-        String strSum = String.valueOf(sum);
-        System.out.println(strSum);
+        BigInteger intResult = new BigInteger(str1).add(new BigInteger(str2));
+        String strResult = new StringBuilder(String.valueOf(intResult)).reverse().toString();
 
-        ListNode result = new ListNode(strSum.charAt(strSum.length() - 1));
-        for (int i = strSum.length() - 2; i >= 0; i--) {
-            result.next = new ListNode(strSum.charAt(i));
-
-            System.out.println(n.val);
+        ListNode result = new ListNode(new BigInteger(String.valueOf(strResult.charAt(0))).intValue());
+        for (int i = 1; i < strResult.length(); i++) {
+            append(result, new BigInteger(String.valueOf(strResult.charAt(i))).intValue());
         }
         return result;
     }
 
-    public void insertAfter(ListNode prev_node, int new_data) {
-        ListNode new_node = new ListNode(new_data);
-        new_node.next = prev_node.next;
-        prev_node.next = new_node;
+    public static void append(ListNode head, int d) {
+        ListNode end = new ListNode(d);
+        while (head.next != null) {
+            head = head.next;
+        }
+        head.next = end;
     }
+
 
     public static class ListNode {
         int val;
         ListNode next;
         ListNode() {}
-        ListNode(int val) { this.val = val; }
-        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+        ListNode(int val) { 
+            this.val = val; 
+        }
+        ListNode(int val, ListNode next) { 
+            this.val = val; this.next = next; 
+        }
+        public void printAll() {
+            ListNode n = this;
+            while (n.next != null) {
+                System.out.print(n.val + " -> ");
+                n = n.next;
+            }
+            System.out.println(n.val);
+        }
     }
 }
